@@ -34,7 +34,7 @@ target_include_directories(cxxabi SYSTEM BEFORE
 )
 target_compile_definitions(cxxabi PRIVATE -D_LIBCPP_BUILDING_LIBRARY)
 target_compile_options(cxxabi PRIVATE -nostdinc++ -fno-sanitize=undefined -Wno-macro-redefined) # If we don't disable UBSan, infinite recursion happens in dynamic_cast.
-target_link_libraries(cxxabi PUBLIC ${EXCEPTION_HANDLING_LIBRARY})
+target_link_libraries(cxxabi PUBLIC /usr/lib/gcc/x86_64-linux-gnu/9/libgcc_eh.a)
 
 # Enable capturing stack traces for all exceptions.
 if (USE_UNWIND)

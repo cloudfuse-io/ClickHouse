@@ -61,7 +61,7 @@ def get_packager_cmd(
     cmake_flags = "-DENABLE_CLICKHOUSE_SELF_EXTRACTING=1 -DUSE_UNWIND=0"
     cmd = (
         f"cd {packager_path} && CMAKE_FLAGS='{cmake_flags}' ./packager --output-dir={output_path} "
-        f"--package-type={package_type} --compiler={comp} --force-build-image"
+        f"--package-type={package_type} --compiler={comp}"
     )
 
     if build_config["build_type"]:
